@@ -586,7 +586,8 @@ public class RTPEncodingDesc
             isPacketOfNewFrame = true;
             synchronized (base.streamFrames)
             {
-                base.streamFrames.put(ts, frame = new FrameDesc(this, ts, nowMs));
+                base.streamFrames.put(
+                    ts, frame = new FrameDesc(this, pkt, nowMs));
             }
 
             // We measure the stable bitrate on every new frame.
